@@ -653,7 +653,8 @@ html {
 }
 
 .card-icon-wrap {
-    width: 47px
+    width: 47px;
+    overflow: hidden
 }
 
 .card-title {
