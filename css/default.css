@@ -342,10 +342,6 @@ summary {
   cursor: pointer;
 }
 
-template {
-  display: none;
-}
-
 [hidden] {
   display: none !important;
 }
