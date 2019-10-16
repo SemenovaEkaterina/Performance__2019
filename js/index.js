@@ -1,4 +1,18 @@
-window.addEventListener('DOMContentLoaded', () => {
+var DOMReady = function(callback) {
+    if (document.readyState === "interactive" || document.readyState === "complete") {
+        callback();
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', callback());
+    } else if (document.attachEvent) {
+        document.attachEvent('onreadystatechange', function() {
+            if (document.readyState != 'loading') {
+                callback();
+            }
+        });
+    }
+};
+
+DOMReady(function() {
     (function(w, d, n) {
         var s = d.createElement('script');
         s.src = '//zen.yandex.ru/widget-loader';
@@ -15,13 +29,13 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     })(window, document, 'yandexZenAsyncCallbacks');
 
-    const buttonsContainer = document.querySelector('.buttons-wrap');
+    var buttonsContainer = document.querySelector('.buttons-wrap');
 
     buttonsContainer.innerHTML = '<button class="button button_yellow" type="button">Да</button>' +
         '<button class="button">Нет</button>';
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+
+
     var waterContainer = document.querySelector('.card.card_size_s:last-child');
 
     waterContainer.innerHTML =
@@ -36,10 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
         '<p class="card-time card-time_block">16:20, Сегодня</p>' +
         '</div>'
 
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-    const buttonsContainer = document.querySelector(".buttons-wrap");
+    buttonsContainer = document.querySelector(".buttons-wrap");
     const fridgeInfoContainer = document.querySelector(".card_size_m:nth-child(8) .card-description");
     setTimeout(function() {
         const confirmPurchaseButton = document.querySelector(".buttons-wrap .button_yellow");
@@ -73,4 +85,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementsByClassName("header-menu__switcher")[0].addEventListener("click", function () {
         document.getElementsByClassName("header-menu")[0].classList.toggle("header-menu_active")
     })
-}, !1);
+});
