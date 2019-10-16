@@ -29,29 +29,7 @@ DOMReady(function() {
         })
     })(window, document, 'yandexZenAsyncCallbacks');
 
-    var buttonsContainer = document.querySelector('.buttons-wrap');
-
-    buttonsContainer.innerHTML = '<button class="button button_yellow" type="button">Да</button>' +
-        '<button class="button">Нет</button>';
-
-
-
-    var waterContainer = document.querySelector('.card.card_size_s:last-child');
-
-    waterContainer.innerHTML =
-        '<div class="card-heading">' +
-        '<div class="card-icon-wrap">' +
-        '<img class="card-icon" src="img/kettle.svg">' +
-        '</div>' +
-        '<h3 class="card-title">Вода вскипела</h3>' +
-        ' </div>' +
-        '<div class="card-specs">' +
-        '<p class="card-source">Чайник</p>' +
-        '<p class="card-time card-time_block">16:20, Сегодня</p>' +
-        '</div>'
-
-
-    buttonsContainer = document.querySelector(".buttons-wrap");
+    const buttonsContainer = document.querySelector(".buttons-wrap");
     const fridgeInfoContainer = document.querySelector(".card_size_m:nth-child(8) .card-description");
     setTimeout(function() {
         const confirmPurchaseButton = document.querySelector(".buttons-wrap .button_yellow");
