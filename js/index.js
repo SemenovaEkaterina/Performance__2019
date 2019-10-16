@@ -13,12 +13,6 @@ var DOMReady = function(callback) {
 };
 
 DOMReady(function() {
-    (function(w, d, n) {
-        var s = d.createElement('script');
-        s.src = '//zen.yandex.ru/widget-loader';
-        d.head.appendChild(s);
-    })(window, document, 'yandexZenAsyncCallbacks');
-
     const buttonsContainer = document.querySelector(".buttons-wrap");
     const fridgeInfoContainer = document.querySelector(".card_size_m:nth-child(8) .card-description");
 
