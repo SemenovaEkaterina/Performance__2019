@@ -625,9 +625,33 @@ html {
     }
 }
 
+.svg {
+    width: 48px;
+}
+
+.svg-music {
+    width: 40px;
+}
+
+.svg-fridge {
+    width: 39px;
+}
+
+.svg-kettle {
+    width: 41px;
+}
+
 @media (max-width: 680px) {
     .svg {
         width: 100%;
+    }
+
+    .svg-ac {
+        width: 102%;
+    }
+
+    .svg-battery {
+        height: 101%;
     }
 
     .content {
