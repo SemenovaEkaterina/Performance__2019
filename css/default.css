@@ -626,6 +626,10 @@ html {
 }
 
 @media (max-width: 680px) {
+    .svg {
+        width: 100%;
+    }
+
     .content {
         width: 335px;
         grid-template-columns: repeat(6, 1fr)
