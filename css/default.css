@@ -463,19 +463,8 @@ html {
     border-radius: 20px;
     background-size: cover;
     background-position: 0 0;
-    touch-action: none
-}
-
-@media (-webkit-max-device-pixel-ratio: 1) {
-    .critical-cam {
-        background: url(https://storage.yandexcloud.net/shri-hw-semenova-static/cam2.jpg)
-    }
-}
-
-@media (-webkit-min-device-pixel-ratio: 2) {
-    .critical-cam {
-        background: url(https://storage.yandexcloud.net/shri-hw-semenova-static/cam2x2.jpg)
-    }
+    touch-action: none;
+    background: url(https://storage.yandexcloud.net/shri-hw-semenova-static/cam2.jpg)
 }
 
 .card-data_graph {
