@@ -164,7 +164,7 @@ header {
     left: -24px;
     width: 20px;
     height: 20px;
-    background: url(https://storage.yandexcloud.net/shri-hw-semenova-static/checked.svg)
+    background: url(../img/checked.svg)
 }
 
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
@@ -464,7 +464,7 @@ html {
     background-size: cover;
     background-position: 0 0;
     touch-action: none;
-    background: url(https://storage.yandexcloud.net/shri-hw-semenova-static/cam2.jpg)
+    background: url(../img/cam2.jpg)
 }
 
 .card-data_graph {
