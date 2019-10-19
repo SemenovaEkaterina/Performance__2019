@@ -6,22 +6,25 @@ html {
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
-}
-
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-    display: block
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow: scroll
 }
 
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff
+    background-color: #fff;
+}
+
+body, html {
+    height: 100%;
+    width: 100%
+}
+
+footer, header {
+    display: block
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -50,12 +53,12 @@ a:hover {
     text-decoration: underline
 }
 
-a:not([href]):not([tabindex]) {
+a:not([href]) {
     color: inherit;
     text-decoration: none
 }
 
-a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
+a:not([href]):hover, a:not([href]):focus {
     color: inherit;
     text-decoration: none
 }
@@ -70,39 +73,29 @@ svg {
     vertical-align: middle
 }
 
-button {
-    border-radius: 0
-}
-
-button:focus {
-    outline: 1px dotted;
-    outline: 5px auto -webkit-focus-ring-color
-}
-
-button, select, optgroup, textarea {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit
-}
-
 button, input {
     overflow: visible
 }
 
-button, select {
-    text-transform: none
-}
-
-button, [type="button"], [type="reset"], [type="submit"] {
+button {
+    border-radius: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-transform: none;
     -webkit-appearance: button
 }
 
-button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+button:focus {
+    outline: 5px auto -webkit-focus-ring-color
+}
+
+button:not(:disabled) {
     cursor: pointer
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h2, h3, h4 {
     margin-bottom: .5rem;
     font-weight: 500;
     line-height: 1.2
@@ -124,23 +117,8 @@ h4, .h4 {
     margin-top: 10px
 }
 
-.card {
-    position: relative;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border-radius: .25rem
-}
-
-.card-title {
-    margin-bottom: 0
-}
-
 header {
     height: 93px;
-    box-sizing: border-box;
     padding: 0 40px;
     border-bottom: 1px solid #f0f0f0
 }
@@ -167,32 +145,31 @@ header {
     background: url(../img/checked.svg)
 }
 
-a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+a, body, div, em, footer, h2, h3, h4, html, img, li, menu, ol, p {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block
+body, html {
+    font-family: Arial;
 }
 
 body {
-    line-height: 1
+    line-height: 1;
 }
 
-ol, ul {
+footer, header, menu {
+    display: block
+}
+
+ol {
     list-style: none
 }
 
-input[type=range] {
-    -webkit-appearance: none
-}
-
-input[type=range]::-webkit-slider-thumb {
+input[type=range], input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none
 }
 
@@ -200,28 +177,26 @@ input[type=range]:focus {
     outline: 0
 }
 
-input[type=range].song-range::-webkit-slider-thumb {
-    -webkit-appearance: none;
+input[type=range]::-webkit-slider-thumb {
     border: none;
+    cursor: pointer;
+    box-shadow: none
+}
+
+input[type=range].song-range::-webkit-slider-thumb {
     height: 20px;
     width: 12px;
     border-radius: 4.5px;
     background: #d8d8d8;
-    cursor: pointer;
-    margin-top: -8px;
-    box-shadow: none
+    margin-top: -8px
 }
 
 input[type=range].volume-range::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: none;
     height: 16px;
     width: 16px;
     border-radius: 26px;
     background: #605757;
-    cursor: pointer;
-    margin-top: -6px;
-    box-shadow: none
+    margin-top: -6px
 }
 
 input[type=range].song-range::-webkit-slider-runnable-track {
@@ -250,14 +225,6 @@ input[type=range].song-range:focus::-webkit-slider-runnable-track {
 
 input[type=range].volume-range:focus::-webkit-slider-runnable-track {
     background: rgba(216, 216, 216, .3)
-}
-
-body, html {
-    font-family: Arial;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%
 }
 
 .content-block {
@@ -335,6 +302,26 @@ footer {
     line-height: 104px
 }
 
+.card {
+    position: relative;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    background: #ebebeb;
+    color: #333;
+    border-radius: 23px;
+    padding: 0 20px 20px 20px
+}
+
+.card-title {
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 700;
+    padding-left: 18px;
+    line-height: 27px
+}
+
 .card_size_m {
     grid-column: span 3;
     grid-row: span 1
@@ -343,14 +330,6 @@ footer {
 .card_size_l {
     grid-column: span 4;
     grid-row: span 3
-}
-
-.card {
-    background: #ebebeb;
-    color: #333;
-    border-radius: 23px;
-    box-sizing: border-box;
-    padding: 0 20px 20px 20px
 }
 
 .card_size_s {
@@ -362,14 +341,6 @@ footer {
 .critical {
     color: #fff;
     padding: 0
-}
-
-* {
-    box-sizing: border-box
-}
-
-html {
-    height: 100%
 }
 
 .card-heading {
@@ -385,13 +356,6 @@ html {
 
 .card-icon-wrap_overflowed {
     overflow: hidden
-}
-
-.card-title {
-    font-size: 24px;
-    font-weight: 700;
-    padding-left: 18px;
-    line-height: 27px
 }
 
 .card-specs {
@@ -420,8 +384,6 @@ html {
 .card-description {
     display: block;
     font-size: 20px;
-    -webkit-columns: #000;
-    columns: #000;
     padding-top: 23px;
     margin-bottom: 9px
 }
@@ -461,10 +423,11 @@ html {
     margin-top: 40px;
     display: block;
     border-radius: 20px;
-    background-size: cover;
-    background-position: 0 0;
     touch-action: none;
-    background: url(../img/cam2.jpg)
+    background: url(../img/cam2.jpg);
+    background-size: 100%;
+    background-position: 0 0;
+    filter: brightness(100%);
 }
 
 .card-data_graph {
@@ -594,10 +557,6 @@ html {
     background: rgba(255, 217, 62, 1)
 }
 
-html {
-    overflow: scroll
-}
-
 @media (max-width: 1230px) {
     .card_size_m {
         grid-column: span 4
@@ -607,10 +566,6 @@ html {
 @media (max-width: 1030px) {
     .content {
         width: 75%
-    }
-
-    .card_size_m {
-        grid-column: span 4
     }
 
     .content-heading {
@@ -625,35 +580,7 @@ html {
     }
 }
 
-.svg {
-    width: 48px;
-}
-
-.svg-music {
-    width: 40px;
-}
-
-.svg-fridge {
-    width: 39px;
-}
-
-.svg-kettle {
-    width: 41px;
-}
-
 @media (max-width: 680px) {
-    .svg {
-        width: 100%;
-    }
-
-    .svg-ac {
-        width: 102%;
-    }
-
-    .svg-battery {
-        height: 101%;
-    }
-
     .content {
         width: 335px;
         grid-template-columns: repeat(6, 1fr)
