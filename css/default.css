@@ -687,7 +687,6 @@ html {
         z-index: 2;
         width: 0;
         overflow: hidden;
-        transition: all .5s ease
     }
 
     .header-menu_active {
